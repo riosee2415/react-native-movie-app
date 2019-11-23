@@ -40,3 +40,5 @@
 3.  cat package.json
 4.  expo install react-native-gesture-handler
 5.  expo start --clear
+
+![issue01](./issue/issue01.jpg)
