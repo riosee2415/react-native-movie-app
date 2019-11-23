@@ -26,3 +26,17 @@
 - [x] TV Show Detail
 - [x] Movie Detail
 - [x] Serach (Movie, TV)
+
+# Issue TIP
+
+<pre>
+    Accessing view manager configs directly off UIManager via UIManager['getConteents'] is no longer ...
+</pre>
+
+- 해결방안
+
+1.  npm install -g expo@latest
+2.  rm -rf node_modules package-lock.json
+3.  cat package.json
+4.  expo install react-native-gesture-handler
+5.  expo start --clear

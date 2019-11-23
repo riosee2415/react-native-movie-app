@@ -12,27 +12,33 @@ class MoviesContainer extends React.Component {
   };
 
   async componentDidMount() {
+    let upcoming, popular, nowPlaying, error;
+
     try {
-      const upcoming = await movies.getUpcoming();
-      const popular = await movies.getPopular();
-      const nowPlaying = await movies.getNowPlaying();
-      console.log("UPCOMING", upcoming);
-      console.log("POPULAR", popular);
-      console.log("NOWPLAYING", nowPlaying);
-    } catch (error) {
-      console.log(error);
-      this.setState({
-        err: "Can't get Movies"
-      });
+      ({
+        data: { results: upcoming }
+      } = await movies.getUpcoming());
+      ({
+        data: { results: popular }
+      } = await movies.getPopular());
+      ({
+        data: { results: nowPlaying }
+      } = await movies.getNowPlaying());
+    } catch {
+      error = "Can't get Movies.";
     } finally {
       this.setState({
-        loading: false
+        loading: false,
+        error,
+        upcoming,
+        popular,
+        nowPlaying
       });
     }
   }
 
   render() {
-    const { loading } = this.state;
+    const { loading, upcoming, popular, nowPlaying } = this.state;
     return <MoviesPresenter loading={loading} />;
   }
 }
