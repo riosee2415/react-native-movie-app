@@ -41,4 +41,4 @@
 4.  expo install react-native-gesture-handler
 5.  expo start --clear
 
-![issue01](./issue/issue01.jpg)
+![issue01](https://github.com/riosee2415/react-native-movie-app/blob/master/issue/issue01.jpeg?raw=true)
