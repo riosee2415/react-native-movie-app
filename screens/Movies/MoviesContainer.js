@@ -39,7 +39,14 @@ class MoviesContainer extends React.Component {
 
   render() {
     const { loading, upcoming, popular, nowPlaying } = this.state;
-    return <MoviesPresenter loading={loading} />;
+    return (
+      <MoviesPresenter
+        loading={loading}
+        upcoming={upcoming}
+        popular={popular}
+        nowPlaying={nowPlaying}
+      />
+    );
   }
 }
 
