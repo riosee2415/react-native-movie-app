@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Loader from "../../components/Loader";
 
 const MoviesPresenter = ({ loading, upcoming, popular, nowPlaying }) =>
-  loading ? <Loader /> : <Text>Movies</Text>;
+  loading ? <Loader /> : <Text>Movies, Hello Hanju</Text>;
 
 MoviesPresenter.propTypes = {
   loading: PropTypes.bool.isRequired,
