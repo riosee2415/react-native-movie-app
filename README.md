@@ -27,6 +27,10 @@
 - [x] Movie Detail
 - [x] Serach (Movie, TV)
 
+# React Native Swiper
+
+- yarn add react-native-swiper
+
 # Issue TIP
 
 <pre>
