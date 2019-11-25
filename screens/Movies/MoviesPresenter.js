@@ -3,9 +3,10 @@ import { Text } from "react-native";
 import PropTypes from "prop-types";
 import Loader from "../../components/Loader";
 import styled from "styled-components";
-import MovieSlider from "../../constants/MovieSlider";
+import MovieSlider from "../../components/MovieSlider";
 import { BG_COLOR } from "../../constants/Colors";
-import Section from "../../constants/Section";
+import Section from "../../components/Section";
+import MovieItem from "../../components/MovieItem";
 
 // RN은 스크롤뷰를 사용하지않으면 스크롤이 생기지 않는다.
 const Container = styled.ScrollView`
@@ -19,7 +20,19 @@ const MoviesPresenter = ({ loading, upcoming, popular, nowPlaying }) =>
     <Container>
       {nowPlaying ? <MovieSlider movies={nowPlaying} /> : null}
       {upcoming ? (
-        <Section movies={upcoming} title={"Upcoming Movies"} />
+        <Section movies={upcoming} title={"Upcoming Movies"}>
+          {upcoming
+            .filter(movie => movie.poster_path !== null)
+            .map(movie => (
+              <MovieItem
+                key={movie.id}
+                id={movie.id}
+                posterPhoto={movie.poster_path}
+                title={movie.title}
+                voteAvg={movie.vote_average}
+              />
+            ))}
+        </Section>
       ) : null}
     </Container>
   );

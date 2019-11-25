@@ -38,6 +38,7 @@ export default class extends React.Component {
 
   render() {
     const { loading, popular, topRated, airingToday } = this.state;
+
     return (
       <TVPresenter
         loading={loading}

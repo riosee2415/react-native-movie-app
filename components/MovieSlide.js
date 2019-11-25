@@ -4,7 +4,7 @@ import styled from "styled-components";
 import makePhotoUrl from "../utils/makePhotoUrl";
 import Layout from "../constants/Layout";
 import MoviePoster from "./MoviePoster";
-import { TINT_COLOR, GREY_COLOR } from "./Colors";
+import { TINT_COLOR, GREY_COLOR } from "../constants/Colors";
 import MovieRating from "./MovieRating";
 
 const Container = styled.View`
