@@ -5,6 +5,7 @@ import Loader from "../../components/Loader";
 import styled from "styled-components";
 import MovieSlider from "../../constants/MovieSlider";
 import { BG_COLOR } from "../../constants/Colors";
+import Section from "../../constants/Section";
 
 // RN은 스크롤뷰를 사용하지않으면 스크롤이 생기지 않는다.
 const Container = styled.ScrollView`
@@ -16,7 +17,10 @@ const MoviesPresenter = ({ loading, upcoming, popular, nowPlaying }) =>
     <Loader />
   ) : (
     <Container>
-      <MovieSlider movies={nowPlaying} />
+      {nowPlaying ? <MovieSlider movies={nowPlaying} /> : null}
+      {upcoming ? (
+        <Section movies={upcoming} title={"Upcoming Movies"} />
+      ) : null}
     </Container>
   );
 
